@@ -1,0 +1,35 @@
+"0","#data2 = select(data2,-11)"
+"0","glimpse(data2)"
+"1","Observations: 4,755
+"
+"1","Variables: 10
+"
+"1","$ existence.expectancy.index                   [3m[38;5;246m<dbl>[39m[23m 0...
+"
+"1",""
+"1","$ existence.expectancy.at.birth                [3m[38;5;246m<dbl>[39m[23m 6...
+"
+"1",""
+"1","$ Gross.income.per.capita                      [3m[38;5;246m<dbl>[39m[23m 2...
+"
+"1",""
+"1","$ Income.Index                                 [3m[38;5;246m<dbl>[39m[23m 0...
+"
+"1",""
+"1","$ Expected.years.of.education..galactic.years. [3m[38;5;246m<dbl>[39m[23m 8...
+"
+"1",""
+"1","$ Mean.years.of.education..galactic.years.     [3m[38;5;246m<dbl>[39m[23m 1...
+"
+"1",""
+"1","$ Intergalactic.Development.Index..IDI.        [3m[38;5;246m<dbl>[39m[23m 0...
+"
+"1",""
+"1","$ Education.Index                              [3m[38;5;246m<dbl>[39m[23m 0...
+"
+"1",""
+"1","$ Intergalactic.Development.Index..IDI...Rank  [3m[38;5;246m<dbl>[39m[23m 1...
+"
+"1",""
+"1","$ y                                            [3m[38;5;246m<dbl>[39m[23m 0...
+"

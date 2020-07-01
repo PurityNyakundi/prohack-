@@ -1,0 +1,186 @@
+---
+title: "Untitled"
+author: "Purity"
+date: "04/06/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+library(tidyverse)
+#load the data
+train<-read.csv("train.csv",stringsAsFactors = F)
+test<-read.csv("test.csv",stringsAsFactors = F)
+head(train)
+dim(train)
+dim(test)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+head(test)
+```
+```{r}
+train%>%
+  group_by(galaxy)%>%
+  count(galaxy)
+```
+```{r}
+test%>%
+  group_by(galaxy)%>%
+  count(galaxy)
+```
+```{r}
+data3<-bind_rows(train,test)
+tail(data3)
+```
+```{r}
+glimpse(data2)
+```
+```{r}
+summary(data2)
+
+```
+
+```{r}
+for(i in 4:79) {
+hist(data2[,i], main=names(data2)[i],xlab =names(data2)[i],col = "powder blue" )
+}
+```
+
+```{r}
+anyDuplicated(data2)
+```
+```{r}
+data2$galaxy
+```
+```{r}
+unique(data2$galaxy)
+```
+```{r}
+data2%>%
+  group_by(galaxy)%>%
+  arrange(y)%>%
+  select(galaxy,y)%>%
+  summarise(sum = sum(y,na.rm = T))
+```
+```{r}
+sum(is.na(train$y))
+sum(is.na(test$y))
+```
+```{r}
+test$y<-NA
+```
+```{r}
+train$y
+```
+```{r}
+
+for (i in 1:length(train)) {
+  train%>%as.data.frame(distinct(train,galaxy))
+}
+```
+```{r}
+colSums(is.na(data2))
+```
+#most have nulls
+```{r}
+data2=data2[,which(colMeans(!is.na(data2))>0.7)]
+head(data2)
+```
+```{r}
+colSums(is.na(data2))
+data2=select(data2,-y)
+```
+```{r}
+library(caret)
+head(data2)
+#data2 = select(data2,-galactic.year)
+dim(data2)
+```
+```{r}
+for (i in which(sapply(data2, is.numeric))) {
+  data2[is.na(data2[, i]), i] <- mean(data2[, i],  na.rm = TRUE)
+}
+```
+
+
+
+```{r}
+head(data2)
+```
+```{r}
+y =data3$y
+data2 =cbind(data2,y)
+```
+```{r}
+data2
+#data2 = select(data2,-11)
+glimpse(data2)
+```
+```{r}
+data2 = select(data2,-1)
+```
+```{r}
+#split
+glimpse(data2)
+#y = data3$y
+#data2 = cbind(data2,y)
+data2 = select(data2,-10)
+glimpse(data2)
+```
+```{r}
+train2 = data2[1:3865,]
+test2 = data2[3866:4755,]
+```
+```{r}
+test2<-select(test2,-y)
+glimpse(test2)
+```
+```{r}
+trainControl <- trainControl(method="cv", number=5)
+set.seed(7)
+fit <- train(y~., data=train2, method="ranger", metric="RMSE", trControl=trainControl)
+# display results
+print(fit)
+```
+```{r}
+#plot(varImp(fit))
+test2$pred<-round(predict(fit,test2),2)
+head(test2$pred)
+
+```
+```{r}
+test2$pred
+```
+```{r}
+head(sample_submit)
+sample_submit$pred<-test2$pred
+
+```
+
+```{r}
+existence.expectancy.index =test$existence.expectancy.index
+write.csv(sample_submit,"iy.csv",)
+
+```
+```{r}
+write.csv(sample_submit,"sample_submit.csv",col.names = F,row.names = F)
+```
+
+```{r}
+fix<-read.csv("sample_submit.csv",header = T)
+tail(fix)
+```

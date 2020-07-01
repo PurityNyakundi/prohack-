@@ -1,0 +1,5 @@
+"0","data2%>%"
+"0","  group_by(galaxy)%>%"
+"0","  arrange(y)%>%"
+"0","  select(galaxy,y)%>%"
+"0","  summarise(sum = sum(y,na.rm = T))"

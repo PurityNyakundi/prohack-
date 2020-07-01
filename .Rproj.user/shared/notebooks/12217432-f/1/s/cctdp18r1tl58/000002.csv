@@ -1,0 +1,3 @@
+"0","for(i in 4:79) {"
+"0","hist(data2[,i], main=names(data2)[i],xlab =names(data2)[i],col = ""powder blue"" )"
+"0","}"

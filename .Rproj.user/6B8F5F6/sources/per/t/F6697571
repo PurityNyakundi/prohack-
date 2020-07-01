@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1591274917380.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1865432612",
+    "id" : "F6697571",
+    "lastKnownWriteTime" : 1591599203,
+    "last_content_update" : 1591599203156,
+    "path" : "D:/codebase/hacka/Hackathon/Hackathon.R",
+    "project_path" : "Hackathon.R",
+    "properties" : {
+        "cursorPosition" : "91,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

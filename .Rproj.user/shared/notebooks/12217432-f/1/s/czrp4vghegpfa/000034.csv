@@ -1,0 +1,7 @@
+"0",""
+"0","for (i in 1:length(train)) {"
+"0","  train%>%as.data.frame(distinct(train,galaxy))"
+"0","}"
+"2","Error in as.data.frame.data.frame(., distinct(train, galaxy)) : 
+  invalid 'row.names', length 1 for a data frame with 3865 rows
+"

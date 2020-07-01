@@ -1,0 +1,2 @@
+"0","fix<-read.csv(""sample_submit.csv"",header = T)"
+"0","tail(fix)"

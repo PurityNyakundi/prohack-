@@ -1,0 +1,2 @@
+"0","data3<-bind_rows(train,test)"
+"0","tail(data3)"

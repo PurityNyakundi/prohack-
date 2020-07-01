@@ -1,0 +1,2 @@
+"0","write.csv(sample_submit,""sample_submit.csv"",col.names = F,row.names = F)"
+"2","attempt to set 'col.names' ignored"

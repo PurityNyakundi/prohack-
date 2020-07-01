@@ -1,0 +1,3 @@
+"0","train%>%"
+"0","  group_by(galaxy)%>%"
+"0","  count(galaxy)"
